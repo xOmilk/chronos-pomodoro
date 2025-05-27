@@ -1,0 +1,12 @@
+.countDown {
+	font-size: clamp(8rem, 25vw, 16rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.number {
+	font-size: 18rem;
+	font-weight: 600;
+}
+
