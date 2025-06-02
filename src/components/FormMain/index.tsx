@@ -4,15 +4,14 @@ import { Cycles } from "../Cycles";
 import { PlayCircleIcon } from "lucide-react";
 
 import styles from "./styles.module.css";
-import { useState } from "react";
+import { useRef } from "react";
 
 export function FormMain() {
-	const [taskName, setTaskName] = useState("");
+	const taskNameInput = useRef(null);
 
 	function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		console.log("Lidando com a criação de task");
-		console.log("Tarefa", taskName);
 	}
 
 	return (
@@ -23,8 +22,7 @@ export function FormMain() {
 					labelText="TESTEEEE"
 					type="search"
 					placeholder="Digite algo"
-					value={taskName}
-					onChange={(e) => setTaskName(e.target.value)}
+					ref={taskNameInput}
 				></InputDefault>
 			</div>
 			<div className={styles.formRow}>
