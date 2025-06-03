@@ -1,7 +1,7 @@
 import { ButtonDefault } from "../ButtonDefault";
 import { InputDefault } from "../InputDefault";
 import { Cycles } from "../Cycles";
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 
 import styles from "./styles.module.css";
 import { useRef } from "react";
@@ -53,6 +53,26 @@ export function FormMain() {
 		});
 	}
 
+	function handleInterruptTask() {
+		setState((prevState) => {
+			return {
+				...prevState,
+				activeTask: null,
+				secondsRemaining: 0, //conferir
+				formattedSecondsRemaining: "00:00",
+				tasks: prevState.tasks.map((task) => {
+					if (
+						prevState.activeTask &&
+						prevState.activeTask.id === task.id
+					) {
+						return { ...task, interruptDate: Date.now() };
+					}
+					return task;
+				}),
+			};
+		});
+	}
+
 	return (
 		<form onSubmit={handleCreateNewTask} className={styles.form}>
 			<div className={styles.formRow}>
@@ -75,10 +95,29 @@ export function FormMain() {
 				</div>
 			)}
 			<div className={styles.formRow}>
-				<ButtonDefault
-					idButtonElement="play"
-					icon={<PlayCircleIcon />}
-				></ButtonDefault>
+				{!state.activeTask && (
+					<ButtonDefault
+						key="botaoSUBMIT"
+						aria-label="Iniciar nova tarefa"
+						title="Iniciar nova tarefa"
+						type="submit"
+						idButtonElement="play"
+						icon={<PlayCircleIcon />}
+					></ButtonDefault>
+				)}
+
+				{!!state.activeTask && (
+					<ButtonDefault
+						key="botaoBUTTON"
+						aria-label="Interromper tarefa atual"
+						title="Interromper tarefa atual"
+						type="button"
+						idButtonElement="stop"
+						color="red"
+						icon={<StopCircleIcon />}
+						onClick={handleInterruptTask}
+					></ButtonDefault>
+				)}
 			</div>
 		</form>
 	);
