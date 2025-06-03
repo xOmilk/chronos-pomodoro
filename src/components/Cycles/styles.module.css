@@ -1,8 +1,8 @@
 .cycles {
 	display: flex;
 	flex-flow: column;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 	gap: 1.6rem;
 }
 .cycleDots {
@@ -13,13 +13,17 @@ div.dot {
 	display: inline-block;
 	width: 2rem;
 	height: 2rem;
-    border-radius: 50%;
+	border-radius: 50%;
 	background-color: var(--primary);
 }
+.workTime {
+	background: var(--warning) !important;
+}
+
 .shortBreakTime {
-	background-color: var(--warning) !important;
+	background: var(--primary) !important;
 }
 
 .longBreakTime {
-	background-color: var(--info) !important;
+	background: var(--info) !important;
 }

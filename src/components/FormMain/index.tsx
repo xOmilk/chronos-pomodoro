@@ -46,7 +46,8 @@ export function FormMain() {
 				activeTask: newTask,
 				currentCycle: nextCycle, //conferir
 				secondsRemaining, //conferir
-				formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining), //cofnerir
+				formattedSecondsRemaining:
+					formatSecondsToMinutes(secondsRemaining), //cofnerir
 				tasks: [...prevState.tasks, newTask],
 			};
 		});
@@ -61,14 +62,18 @@ export function FormMain() {
 					type="search"
 					placeholder="Digite algo"
 					ref={taskNameInput}
+					disabled={!!state.activeTask}
 				></InputDefault>
 			</div>
 			<div className={styles.formRow}>
 				<p></p>
 			</div>
-			<div className={styles.formRow}>
-				<Cycles />
-			</div>
+
+			{state.currentCycle > 0 && (
+				<div className="formRow">
+					<Cycles />
+				</div>
+			)}
 			<div className={styles.formRow}>
 				<ButtonDefault
 					idButtonElement="play"
