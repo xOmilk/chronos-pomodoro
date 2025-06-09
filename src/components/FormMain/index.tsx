@@ -10,6 +10,7 @@ import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import { Tips } from "../Tips";
 
 export function FormMain() {
 	const { state, dispatch } = useTaskContext();
@@ -41,23 +42,6 @@ export function FormMain() {
 	}
 
 	function handleInterruptTask() {
-		/* 		setState((prevState) => {
-			return {
-				...prevState,
-				activeTask: null,
-				secondsRemaining: 0, //conferir
-				formattedSecondsRemaining: "00:00",
-				tasks: prevState.tasks.map((task) => {
-					if (
-						prevState.activeTask &&
-						prevState.activeTask.id === task.id
-					) {
-						return { ...task, interruptDate: Date.now() };
-					}
-					return task;
-				}),
-			};
-		}); */
 		dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
 	}
 
@@ -74,7 +58,7 @@ export function FormMain() {
 				></InputDefault>
 			</div>
 			<div className={styles.formRow}>
-				<p></p>
+				<Tips />
 			</div>
 
 			{state.currentCycle > 0 && (
