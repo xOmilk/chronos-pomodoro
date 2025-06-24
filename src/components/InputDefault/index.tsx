@@ -7,7 +7,7 @@ type InputDefaultProps = {
 
 export function InputDefault({
 	idInputElement,
-	type="text",
+	type = "text",
 	labelText,
 	...anyParam
 }: InputDefaultProps) {
@@ -16,7 +16,12 @@ export function InputDefault({
 			<label className={styles.label} htmlFor={idInputElement}>
 				{labelText}
 			</label>
-			<input id={idInputElement} className={styles.input} type={type} {...anyParam} />
+			<input
+				id={idInputElement}
+				className={styles.input}
+				type={type}
+				{...anyParam}
+			/>
 		</>
 	);
 }
