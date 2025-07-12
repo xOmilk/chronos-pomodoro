@@ -11,7 +11,7 @@ import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
 import { Tips } from "../Tips";
-import { toastifyAdapter } from "../../adapters/toastifyAdapter";
+import { showMessage } from "../../adapters/toastifyAdapter";
 
 export function FormMain() {
 	const { state, dispatch } = useTaskContext();
@@ -23,14 +23,14 @@ export function FormMain() {
 
 	function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		toastifyAdapter.dismiss();
+		showMessage.dismiss();
 
 		if (taskNameInput.current === null) return;
 
 		const taskName = taskNameInput.current.value.trim();
 
 		if (!taskName) {
-			return toastifyAdapter.warning("Digite um nome na tarefa!");
+			return showMessage.warning("Digite um nome na tarefa!");
 		}
 
 		const newTask: TaskModel = {
@@ -42,14 +42,14 @@ export function FormMain() {
 			duration: state.config[nextCycleType],
 			type: nextCycleType,
 		};
-		toastifyAdapter.sucess("Tarefa criada!");
+		showMessage.sucess("Tarefa criada!");
 
 		dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
 	}
 
 	function handleInterruptTask() {
-		toastifyAdapter.dismiss();
-		toastifyAdapter.error("Tarefa interrompida!");
+		showMessage.dismiss();
+		showMessage.error("Tarefa interrompida!");
 		dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
 	}
 

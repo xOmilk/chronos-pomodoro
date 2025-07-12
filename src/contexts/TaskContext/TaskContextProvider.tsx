@@ -68,7 +68,6 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
 		} else {
 			playBeepRef.current = null;
 		}
-		console.log(state);
 	}, [state.activeTask]);
 
 	return (
