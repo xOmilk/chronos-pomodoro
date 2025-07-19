@@ -54,7 +54,7 @@ export function Menu() {
 			<RouterLink
 				title="Ir para as configurações"
 				className={styles.menuLink}
-				href="/config"
+				href="/settings"
 			>
 				<Settings />
 			</RouterLink>
