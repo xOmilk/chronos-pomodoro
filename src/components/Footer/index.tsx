@@ -8,7 +8,7 @@ export function Footer() {
 			<RouterLink href="/about-pomodoro">
 				Entenda como funciona a técnica pomodoro
 			</RouterLink>
-			<RouterLink href="/">
+			<RouterLink href="https://github.com/xOmilk/chronos-pomodoro">
 				Chronos Pomodoro &copy; {new Date().getFullYear()}
 			</RouterLink>
 		</footer>
