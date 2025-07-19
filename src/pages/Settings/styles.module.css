@@ -1,0 +1,11 @@
+.tipMessage {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+.tipMessage p {
+	text-align: center;
+}
+
