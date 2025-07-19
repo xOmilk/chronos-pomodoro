@@ -113,9 +113,9 @@ export function AboutPomodoro() {
 					<h3>📊 Histórico automático</h3>
 					<p>
 						Todas as suas tarefas e ciclos concluídos ficam salvos
-						no <a href="/history">histórico</a>, com status de
-						completas ou interrompidas. Assim, você consegue
-						acompanhar sua evolução ao longo do tempo.
+						no <RouterLink href="/history">histórico</RouterLink>,
+						com status de completas ou interrompidas. Assim, você
+						consegue acompanhar sua evolução ao longo do tempo.
 					</p>
 
 					<h2>Por que usar o Chronos Pomodoro?</h2>

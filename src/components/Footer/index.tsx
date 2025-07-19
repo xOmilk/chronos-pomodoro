@@ -5,7 +5,7 @@ export function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footerLinks}></div>
-			<RouterLink href="about-pomodoro">
+			<RouterLink href="/about-pomodoro">
 				Entenda como funciona a técnica pomodoro
 			</RouterLink>
 			<RouterLink href="/">
