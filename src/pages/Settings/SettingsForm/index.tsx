@@ -8,9 +8,10 @@ import { useTaskContext } from "../../../contexts/TaskContext/useTaskContext";
 
 import styles from "./styles.module.css";
 import { showMessage } from "../../../adapters/toastifyAdapter";
+import { TaskActionTypes } from "../../../contexts/TaskContext/taskActions";
 
 export function SettingsForm() {
-	const { state } = useTaskContext();
+	const { state, dispatch } = useTaskContext();
 
 	const workTimeInput = useRef<HTMLInputElement>(null);
 	const shortBreakTimeInput = useRef<HTMLInputElement>(null);
@@ -46,6 +47,12 @@ export function SettingsForm() {
 			});
 			return;
 		}
+
+		dispatch({
+			type: TaskActionTypes.CHANGE_SETTINGS,
+			payload: { workTime, shortBreakTime, longBreakTime },
+		});
+		showMessage.sucess("Configurações salvas");
 	}
 
 	return (

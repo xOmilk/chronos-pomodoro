@@ -21,6 +21,10 @@ export function History() {
 	const { state, dispatch } = useTaskContext();
 	const hasTasks = state.tasks.length > 0;
 
+	useEffect(() => {
+		document.title = "Histórico - Chronos Pomodoro";
+	}, []);
+
 	function handleResetHistory() {
 		toast.dismiss();
 		showMessage.confirm(

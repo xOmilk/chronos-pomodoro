@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container } from "../../components/Container";
 import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
@@ -7,6 +8,10 @@ import styles from "./styles.module.css";
 
 Settings.Form = SettingsForm;
 export function Settings() {
+	useEffect(() => {
+		document.title = "Configurações - Chronos Pomodoro";
+	}, []);
+
 	return (
 		<MainTemplate>
 			<Container>

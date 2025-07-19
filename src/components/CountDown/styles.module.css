@@ -10,3 +10,13 @@
 	font-weight: 600;
 }
 
+@media (max-width: 470px) {
+	.number {
+		font-size: 15rem;
+	}
+}
+@media (max-width: 400px) {
+	.number {
+		font-size: 13rem;
+	}
+}
