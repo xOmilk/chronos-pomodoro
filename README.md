@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+# ⏰ Chronos Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Badge](https://img.shields.io/badge/status-conclu%C3%ADdo-green)
+![Badge](https://img.shields.io/badge/tech-React%20%7C%20TypeScript-informational)
 
-Currently, two official plugins are available:
+Um timer inteligente baseado na Técnica Pomodoro, projetado para aumentar sua produtividade e foco. Crie tarefas, inicie o cronômetro e acompanhe seu progresso através de um histórico detalhado.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**🔗 Acesse a aplicação em produção:** [Chronos Pomodoro App](https://chronos-pomodoro-wheat.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📋 Índice
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Funcionalidades](#-funcionalidades)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Como Executar o Projeto](#-como-executar-o-projeto)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📖 Sobre o Projeto
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+**Chronos Pomodoro** é uma aplicação web que implementa a Técnica Pomodoro para ajudar usuários a gerenciar seu tempo de forma eficaz. O usuário pode definir uma tarefa, iniciar um ciclo de trabalho focado (geralmente 25 minutos) e, ao final, a tarefa é registrada no histórico. Isso permite não só manter o foco, mas também visualizar o trabalho realizado ao longo do tempo.
+
+O projeto foi desenvolvido como parte de um estudo aprofundado em **React com TypeScript**, utilizando conceitos modernos como hooks, contextos e componentização.
+
+---
+
+## ✨ Funcionalidades
+
+-   ▶️ **Timer Inteligente:** Inicie um novo ciclo de Pomodoro para qualquer tarefa.
+-   📝 **Criação de Tarefas:** Dê um nome e defina a duração do seu ciclo de foco.
+-   🛑 **Controle Total:** Interrompa o timer a qualquer momento, se necessário.
+-   📊 **Histórico Detalhado:** Acesse uma página com o registro de todas as tarefas, incluindo:
+    -   Nome da tarefa
+    -   Duração programada
+    -   Data e hora de início
+    -   Status (Concluído ✅, Interrompido ❌ ou Em progresso ⏳)
+
+---
+
+
+## 🚀 Tecnologias Utilizadas
+
+Este projeto foi construído com as seguintes tecnologias:
+
+-   **[React](https://reactjs.org/)** (com **[Vite](https://vitejs.dev/)**)
+-   **[TypeScript](https://www.typescriptlang.org/)**
+-   **[React Router DOM](https://reactrouter.com/)** para gerenciamento de rotas
+-   **[Date-fns](https://date-fns.org/)** para formatação de datas
+-   **[Lucide Dev](https://lucide.dev/)** para ícones
+-   **[React Toastify](https://fkhadra.github.io/react-toastify/introduction/)** para toasts
+
+---
+
+## ⚙️ Como Executar o Projeto
+
+Siga os passos abaixo para rodar a aplicação localmente.
+
+**Pré-requisitos:**
+* **Node.js** (versão 16 ou superior)
+* **npm** ou **yarn**
+
+```bash
+# 1. Clone o repositório
+git clone [https://github.com/xOmilk/chronos-pomodoro.git](https://github.com/xOmilk/chronos-pomodoro.git)
+
+# 2. Navegue até o diretório do projeto
+cd chronos-pomodoro
+
+# 3. Instale as dependências
+npm install
+
+# 4. Execute a aplicação em modo de desenvolvimento
+npm run dev
